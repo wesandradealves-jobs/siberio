@@ -2,7 +2,8 @@
 	.main 
 		+mq(1280px, min)
 			background: url(assets/imgs/paws-horizontal.png) center bottom no-repeat transparent
-			padding-bottom: 760px
+			padding-bottom: 630px
+			margin-bottom: -130px
 	.banner
 		@extend .flex
 		flex-flow: column wrap 
@@ -67,13 +68,12 @@
 				margin-bottom: -70px
 				&-content 
 					>* 
+						margin: 0 auto 
+						padding: 60px 45px
+						+mq(814px, max)
+							padding: 10px 45px 25px					    
 						&:not(:first-child)
 							display: none
-						padding: 175px 100px
-						+mq(1280px, max)
-							padding: 60px 100px 30px
-							+mq(814px, max)
-								padding: 30px
 						p 
 							@extend .text
 				> * 
@@ -89,12 +89,12 @@
 								text-overflow: ellipsis
 								white-space: nowrap
 								padding: 30px 15px
-								+mq(737px, max)
+								+mq(814px, max)
 									flex: 0 0 auto 
 									margin-bottom: 15px
 									+border(10px)
 									&:nth-last-child(4)
-										width: calc(100% - 22px)
+										width: calc(100% - 16px)
 									&:nth-last-child(7),
 									&:nth-last-child(6),
 									&:nth-last-child(5),										

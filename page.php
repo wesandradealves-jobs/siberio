@@ -68,38 +68,6 @@
 				get_template_part('template-parts/filiacao'); 
 			} elseif($post->post_name == 'contato'){
 				?>
-				<?php if(get_theme_mod('telefone') || get_theme_mod('email') || get_theme_mod('social_networks')) : ?>
-					<section class="contato">
-						<div class="container">
-							<?php if(get_theme_mod('email')) : ?>
-								<p>
-									<i class="fas fa-envelope"></i>
-									<span><a href="mailto:<?php echo get_theme_mod('email'); ?>" title="<?php echo get_theme_mod('email'); ?>"><?php echo get_theme_mod('email'); ?></a></span>
-								</p>
-							<?php endif; ?>
-
-							<?php if(get_theme_mod('telefone')) : ?>
-								<p>
-									<i class="fab fa-whatsapp"></i>
-									<span><a href="tel:<?php echo get_theme_mod('telefone'); ?>" title="<?php echo get_theme_mod('telefone'); ?>"><?php echo get_theme_mod('telefone'); ?></a></span>
-								</p>
-							<?php endif; ?>
-
-							<?php if ( get_theme_mod('facebook') || get_theme_mod('instagram')) : ?>
-							<ul class="socialnetworks">
-								<?php if ( get_theme_mod('facebook') ) : ?>
-								<li><a href="<?php echo get_theme_mod('facebook');  ?>" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a></li>
-								<?php endif; ?>
-								<?php if ( get_theme_mod('instagram') ) : ?>
-								<li><a href="<?php echo get_theme_mod('instagram');  ?>" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
-								<?php endif; ?>
-							</ul>
-
-							<p>@siberio</p>
-							<?php endif; ?>
-						</div>
-					</section>
-				<?php endif; ?>
 				<section class="contactform">
 					<div class="container">
 						<form method="POST" action="<?php echo site_url('PHPMailer/send.php') ?>">
@@ -125,6 +93,35 @@
 						</form>
 					</div>
 				</section>
+				<?php if(get_theme_mod('telefone') || get_theme_mod('email') || get_theme_mod('social_networks')) : ?>
+					<section class="contato">
+						<h2 class="title">Mantenha-se Atualizado</h2>
+						<div class="container">
+							<?php if(get_theme_mod('email')) : ?>
+								<p>
+									<span><a target="_blank" href="mailto:<?php echo get_theme_mod('email'); ?>" title="<?php echo get_theme_mod('email'); ?>"><i class="fas fa-envelope"></i></a></span>
+								</p>
+							<?php endif; ?>
+
+							<?php if(get_theme_mod('telefone')) : ?>
+								<p>
+									<span><a target="_blank" href="tel:<?php echo get_theme_mod('telefone'); ?>" title="<?php echo get_theme_mod('telefone'); ?>"><i class="fab fa-whatsapp"></i></a></span>
+								</p>
+							<?php endif; ?>
+
+							<?php if ( get_theme_mod('facebook') || get_theme_mod('instagram')) : ?>
+							<ul class="socialnetworks">
+								<?php if ( get_theme_mod('facebook') ) : ?>
+								<li><a target="_blank" href="<?php echo get_theme_mod('facebook');  ?>" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a></li>
+								<?php endif; ?>
+								<?php if ( get_theme_mod('instagram') ) : ?>
+								<li><a target="_blank" href="<?php echo get_theme_mod('instagram');  ?>" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+								<?php endif; ?>
+							</ul>
+							<?php endif; ?>
+						</div>
+					</section>
+				<?php endif; ?>
 				<?php
 			}
 		?>

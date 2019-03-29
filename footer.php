@@ -9,6 +9,9 @@
 		</footer>
 		<?php endif; ?>
 	<?php endif; ?>
+	<div class="copyright">
+		<p><?php echo "&#x24B8; Copyright ".date('Y')." - ".get_bloginfo('name')." - Todos os direitos reservados. - Desenvolvido por <a href='http://www.uppercreative.com.br' title='uppercreative'>uppercreative</a>"; ?>
+	</div>
 </div>
 <?php wp_footer(); ?>
 </body>

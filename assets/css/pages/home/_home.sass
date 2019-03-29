@@ -34,6 +34,8 @@
 .navegacao
 	background-size: cover 
 	background-position: center 45px
+	+mq(814px, max)
+		background-position: left center
 	background-repeat: no-repeat
 	overflow: hidden
 	z-index: 1
@@ -47,19 +49,17 @@
 								+transition((30s*$i)/100)
 								top: 0	
 								opacity: 1
-	+mq(690px, max)
-		background-color: $lightblue
 	.container 
 		padding-top: 100px
 		padding-bottom: 50px
-		+mq(690px, max)
+		+mq(814px, max)
 			padding-top: 50px
 		.navegacao 
 			@extend .flex 
 			flex-flow: row wrap 
 			justify-content: center
 			align-items: stretch
-			+mq(690px, max)
+			+mq(814px, max)
 				flex-flow: column wrap 
 				align-items: center 
 			>* 
@@ -72,7 +72,7 @@
 							+transition((30s*$i)/100)
 							top: -999px
 							opacity: 0	
-				+mq(690px, max)
+				+mq(814px, max)
 					margin: 0 0
 					&:not(:last-child)
 						margin-bottom: 45px
@@ -82,8 +82,6 @@
 						background-color: lighten($lightblue, 5%)
 				i 
 					background-color: $lightblue 
-					+mq(690px, max)
-						background-color: $blue
 					height: 300px
 					width: 300px
 					+mq(1440px, max)
