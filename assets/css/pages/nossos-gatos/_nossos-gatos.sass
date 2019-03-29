@@ -1,0 +1,38 @@
+.nossos-gatos
+	@extend .flex
+	flex-flow: row wrap 
+	justify-content: center
+	align-items: stretch
+	max-width: 1680px
+	margin: 0 auto 
+	> li 
+		cursor: pointer
+		flex: 1
+		+mq(767px, max)
+			flex: 0 0 auto 
+			width: 100%
+			margin-bottom: 30px
+		&:hover 
+			+mq(1280px, min)
+				.avatar
+					transform: scale(1.1)
+			.title > span 
+				background-color: $lightblue  
+				color: $darkblue
+		.avatar
+			+transition(500ms)
+		.title 
+			display: block 
+			> * 
+				display: inherit 
+			> span 
+				background-color: $darkblue
+				padding: 5px 40px
+				@extend .title 
+				color: white
+				+rem('font-size', 40px) 
+				max-width: 166px
+				margin-bottom: 10px
+			> small 
+				@extend .title 
+				+rem('font-size', 16px)

@@ -1,0 +1,122 @@
+.page-templates-gato
+	.main 
+		+mq(1280px, min)
+			background: url(assets/imgs/paws-horizontal.png) center bottom no-repeat transparent
+			padding-bottom: 760px
+	.banner
+		@extend .flex
+		flex-flow: column wrap 
+		justify-content: center 
+		align-items: center
+		padding: 0 45px 
+		& + .titulo
+			@extend .title
+			@extend .boxed
+		&::after 
+			content: ''
+			display: block 
+			position: absolute 
+			top: 0 
+			left: 0 
+			width: 100%
+			height: 100%
+			background-color: rgba(0,0,0,.75)
+			z-index: 1
+	.perfil
+		background-color: $darkblue
+		color: white
+		.container
+			@extend .flex 
+			flex-flow: row wrap 
+			justify-content: space-between 
+			align-items: center
+			padding-top: 30px 
+			padding-bottom: 30px
+			.avatar-wrapper
+				& + * 
+					flex: 1
+					+mq(900px, max)
+						flex: 0 0 auto 
+						width: 100%
+
+	.descricao
+		background-color: $lightblue
+		.container 
+			max-width: 100%
+			padding-left: 0 
+			padding-right: 0
+			.tabs
+				@extend .flex 
+				flex-flow: row wrap 
+				justify-content: space-between
+				align-items: stretch
+				padding-left: 75px
+				padding-right: 75px
+				+mq(1500px, max)
+					padding-left: 30px
+					padding-right: 30px
+					+mq(1440px, max)
+						top: -50px
+						margin-bottom: -50px
+						+mq(737px, max)
+							justify-content: center 
+							top: 0
+							margin-bottom: 0
+							padding-top: 30px
+				top: -70px
+				margin-bottom: -70px
+				&-content 
+					>* 
+						&:not(:first-child)
+							display: none
+						padding: 175px 100px
+						+mq(1280px, max)
+							padding: 60px 100px 30px
+							+mq(814px, max)
+								padding: 30px
+						p 
+							@extend .text
+				> * 
+					flex: 1 
+					padding: 45px 0
+					+mq(1440px, max)
+						padding: 30px 0
+						+rem('font-size', 22px)
+						+mq(1280px, max)
+							+rem('font-size', 18px)
+							+mq(1024px, max)
+								overflow: hidden
+								text-overflow: ellipsis
+								white-space: nowrap
+								padding: 30px 15px
+								+mq(737px, max)
+									flex: 0 0 auto 
+									margin-bottom: 15px
+									+border(10px)
+									&:nth-last-child(4)
+										width: calc(100% - 22px)
+									&:nth-last-child(7),
+									&:nth-last-child(6),
+									&:nth-last-child(5),										
+									&:nth-last-child(3),
+									&:nth-last-child(2),
+									&:nth-last-child(1)
+										width: 30.333%
+									+mq(568px, max)
+										width: 100%!important
+					text-align: center 
+					+rem('font-size', 26px)
+					font-family: 'Bebas Neue'
+					color: black
+					border: 1px $lightblue solid 
+					background-color: white 
+					margin: 0 7.5px
+					+border(3px)
+					text-transform: uppercase
+					&:hover,
+					&.current,
+					&.active 
+						background-color: $lightblue 
+						+mq(737px, max)
+							background-color: darken($lightblue, 10%)
+						color: white

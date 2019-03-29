@@ -1,0 +1,98 @@
+.pg-single
+	.footer 
+		.filiacao
+			margin-top: 30px
+	.main 
+		+mq(1280px, min)
+			background: url(assets/imgs/paws-horizontal.png) center bottom no-repeat transparent
+			padding-bottom: 760px	
+	.banner 
+		height: 0 !important 
+		padding: 0 0 45% !important	
+	.single-perfil
+		max-width: 540px
+		margin: -50px auto 0
+		.container
+			padding: 0
+			h4 
+				font-style: italic 
+				+rem('font-size', 22px)
+				color: $gray
+				margin-top: 30px
+				text-align: center 
+				font-weight: bold
+		.title
+			&.perfil-header
+				margin-bottom: 20px
+				.title 
+					small 
+						display: block
+						+rem('font-size', 29px)
+						text-align: center
+				background-color: $lightblue
+				display: flex
+				flex-flow: row wrap 
+				align-items: stretch 
+				justify-content: space-between	
+				+rem('font-size', 98px !important)
+				+mq(1024px, max)
+					+rem('font-size', 62px !important)
+					+mq(414px, max)
+						+rem('font-size', 42px !important)
+				>span 
+					flex: 1
+					+mq(1024px, max)
+						&:not(.flag)
+							padding: 20px 0
+							+mq(414px, max)
+								padding: 34px 0
+					&.flag 
+						flex: 0 0 auto
+						width: 175px
+						background-size: contain
+						background-position: center top
+						background-repeat: no-repeat
+	.perfil-info
+		margin-top: 60px
+		+mq(568px, max)
+			padding: 0 30px
+		display: block
+		>*
+			&::before 
+				display: none
+			&:not(:last-child)
+				margin-bottom: 10px
+	.premios
+		background-color: $lightblue 
+		margin-top: calc(105px + 110px)
+		padding-left: 75px
+		padding-right: 75px
+		padding-bottom: 215px
+		+mq(814px, max)
+			padding-bottom: 220px
+			padding-left: 30px
+			padding-right: 30px
+		.ribbon
+			display: block 
+			margin: 0 auto -50px
+			img 
+				max-width: 150px
+				display: block 
+				margin: 0 auto
+				top: -100px
+			& + .title 
+				padding: 70px auto 140px
+				small
+					display: block 
+					margin-top: 60px
+					+rem('font-size', 32px)
+					+mq(814px, max)
+						+rem('font-size', 24px)
+	.galeria 
+		margin-top: -135px
+		&:hover > * 
+			filter: blur(5px)
+		> *
+			+transition(500ms)
+			&:hover 
+				filter: none

@@ -1,0 +1,116 @@
+.header
+	background-color: $darkblue
+	.container 
+		@extend .flex
+		flex-flow: row wrap 
+		justify-content: space-between
+		align-items: center
+		padding-top: 20px
+		padding-bottom: 20px
+		// +mq(1336px, max)
+		// 	padding-top: 50px
+		// 	padding-bottom: 50px
+		+mq(814px, max)
+			padding-left: 45px
+			padding-right: 30px
+		.logo 
+			flex: 1
+			// +mq(1336px, max)
+			// 	flex: 0 0 auto
+			// 	+mq(1200px, max)
+			// 		flex: 1
+			// 		+mq(1080px, max)
+			// 			flex: 0 0 auto
+			// 			padding-right: 0
+			// 			width: 100%
+			// 			text-align: center
+			// 			z-index: 1
+			padding-right: 30px
+			+mq(1080px, max)
+				text-align: center 
+			img 
+				max-height: 120px
+				+transition(500ms)
+				+mq(1080px, max)
+					display: inline-block
+				// +mq(1336px, max)
+				// 	max-height: 100px
+				// 	+mq(568px, max)
+				// 		max-height: 17vw 
+	.navigation
+		flex: 0 0 auto
+		// +mq(1336px, max)
+		// 	flex: 1
+		// 	+mq(1200px, max)	
+		// 		flex: 0 0 auto 
+		// 		+mq(1080px, max)
+		// 			margin-left: -57px
+		// 			z-index: 2
+		>ul 
+			width: 100%
+			@extend .flex
+			flex-flow: row wrap 
+			justify-content: flex-end
+			align-items: center
+			>li 
+				+mq(1280px, min)
+					@for $i from 1 through 10 
+						&:nth-child(#{$i}) 
+							+animation('top-opacity', (30s*$i)/100)
+			        
+				&:not(:last-child):not(:nth-last-child(2))
+					margin-right: 30px
+					// +mq(1280px, max)
+					// 	margin-right: 30px
+				&:last-child
+					display: none
+				&:hover,
+				&.active,
+				&.current
+					color: $lightblue
+		ul
+			li 
+				color: white 
+				+rem('font-size', 22px)
+				// +mq(1540px, max)
+				// 	+rem('font-size', 30px)
+				// 	+mq(1440px, max)
+				// 		+rem('font-size', 24px)
+				+mq(1080px, max)
+					&:not(:last-child)
+						display: none 
+					&:last-child
+						display: block
+				text-transform: uppercase
+				font-family: 'Bebas Neue'
+	&.sticky
+		+transition(500ms)
+		position: fixed
+		+mq(1080px, max)
+			display: none !important
+		left: 0
+		top: 0
+		z-index: 50
+		width: 100%
+		&.stuck 
+			.container 
+				padding-top: 15px
+				padding-bottom: 15px			
+			.logo 
+				img 
+					max-height: 90px				
+.navigation
+	&.mobile
+		display: none
+		&.toggle 
+			display: block 
+		>ul 
+			>li 
+				display: block 
+				background-color: $darkblue 
+				color: white 
+				font-family: 'Bebas Neue'
+				+rem('font-size', 18px)
+				padding: 15px
+				&:not(:last-child)
+					border-bottom: 2px rgba(0,0,0,.35) solid

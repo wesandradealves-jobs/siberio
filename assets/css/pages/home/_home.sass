@@ -1,0 +1,183 @@
+.webdoor
+	.item
+		padding: 0 0 35%
+		+mq(814px, max)
+			padding: 0 0 50%
+		background-size: cover 
+		background-position: center  center
+		background-repeat: no-repeat
+		cursor: pointer
+	.slick-dots
+		@extend .flex 
+		flex-flow: row wrap 
+		justify-content: center 
+		align-items: center 
+		margin: 15px auto -28px
+		+mq(814px, max)
+			margin: 15px auto
+		z-index: 2
+		>li 
+			margin: 0 5px
+			>button
+				cursor: pointer
+				display: block 
+				height: 10px
+				width: 10px
+				+border(999px)
+				background-color: $darkblue
+				font-size: 0pt
+				overflow: hidden
+				text-indent: 999px
+			&.slick-active
+				>button 
+					background-color: $lightblue
+.navegacao
+	background-size: cover 
+	background-position: center 45px
+	background-repeat: no-repeat
+	overflow: hidden
+	z-index: 1
+	+mq(1280px, min)
+		&.animated
+			.container 
+				.navegacao 
+					>*
+						@for $i from 1 through 3 
+							&:nth-child(#{$i}) 
+								+transition((30s*$i)/100)
+								top: 0	
+								opacity: 1
+	+mq(690px, max)
+		background-color: $lightblue
+	.container 
+		padding-top: 100px
+		padding-bottom: 50px
+		+mq(690px, max)
+			padding-top: 50px
+		.navegacao 
+			@extend .flex 
+			flex-flow: row wrap 
+			justify-content: center
+			align-items: stretch
+			+mq(690px, max)
+				flex-flow: column wrap 
+				align-items: center 
+			>* 
+				cursor: pointer
+				margin: 0 30px			
+				+transition(500ms)	
+				+mq(1280px, min)
+					@for $i from 1 through 3 
+						&:nth-child(#{$i}) 
+							+transition((30s*$i)/100)
+							top: -999px
+							opacity: 0	
+				+mq(690px, max)
+					margin: 0 0
+					&:not(:last-child)
+						margin-bottom: 45px
+				&:hover i 
+					+mq(1280px, min)
+						transform: scale(1.1)
+						background-color: lighten($lightblue, 5%)
+				i 
+					background-color: $lightblue 
+					+mq(690px, max)
+						background-color: $blue
+					height: 300px
+					width: 300px
+					+mq(1440px, max)
+						height: 200px
+						width: 200px
+					@extend .flex 
+					flex-flow: column wrap 
+					justify-content: center 
+					align-items: center
+					+border(999px)
+					+transition(500ms)
+					img 
+						display: block 
+						max-width: 60%
+						width: auto
+				h3 
+					color: $darkblue
+					font-family: 'Bebas Neue'
+					+rem('font-size', 30px)
+					text-transform: uppercase
+					margin: 50px auto 0
+					text-align: center
+					display: block
+
+.quem-somos
+	.titulo
+		@extend .title
+		font-family: 'Amarillo'
+		margin-bottom: -65px
+		+mq(814px, max)
+			margin: 15px auto -10px
+		z-index: 2
+	.container-wrapper 
+		color: white 
+		background-color: $darkblue 
+		// +shadow(0,-25px,0,0px,$lightblue)
+		border-top: 25px $lightblue solid
+		max-width: 100%
+		.container
+			padding-top: 100px
+			padding-bottom: 100px
+			text-align: center
+		p  	
+			color: inherit
+			@extend .text
+			margin-top: 0
+			+mq(814px, max)
+				padding-left: 15px
+				padding-right: 15px
+		.btn-wrapper 
+			margin: 60px auto 0
+			@extend .flex
+			flex-flow: row wrap 
+			justify-content: space-between
+			+mq(814px, max)
+				justify-content: center
+				flex-flow: column wrap
+			align-items: center
+			&::after,
+			&::before 
+				content: ''
+				flex: 1
+				height: 5px 
+				background-color: $lightblue
+				+mq(737px, max)
+					display: none
+			.btn 
+				flex: 0 0 auto 
+				margin: 0 157px
+				+mq(1440px, max)
+					margin: 0 70px
+					+mq(737px, max)
+						margin: 0 auto
+						width: calc(100% - 30px)
+				+transition(500ms)
+				&:hover 
+					+mq(1280px, min)
+						transform: scale(1.1)
+						background-color: lighten($lightblue, 5%)
+
+.parallax
+	+mq('814px', max)
+		background-attachment: scroll !important
+	&.has_text
+		padding: 0
+		@extend .banner
+	&-content 
+		text-align: center
+		.container 
+			padding: 60px 45px
+			+mq(814px, max)
+				padding: 60px 30px
+			.titulo 
+				@extend .title
+				margin-bottom: 30px
+			p 
+				@extend .text

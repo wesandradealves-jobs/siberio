@@ -1,0 +1,78 @@
+.pg-contato
+	.contato
+		background-color: $darkblue
+		color: white 
+		.container 
+			padding-top: 60px
+			padding-bottom: 60px
+			text-align: center
+			>*:not(:first-child):not(:last-child)
+				margin-top: 50px
+				+mq(1440px, max)
+					margin-top: 25px
+			p, .socialnetworks span 
+				color: white 
+				+rem('font-size', 55px)
+				+mq(1440px, max)
+					+rem('font-size', 19px)				
+				font-weight: 600
+			p i 
+				display: block 
+			i 
+				color: $lightblue 
+				+rem('font-size', 75px)
+				+mq(1440px, max)
+					+rem('font-size', 35px)
+			.socialnetworks > li 
+				display: inline-block 
+				vertical-align: middle
+				margin: 0 5px 10px
+	.contactform
+		.container
+			max-width: 1440px
+			padding: 60px 145px
+			+mq(814px, max)
+				padding-left: 45px 
+				padding-right: 45px
+		form 
+			max-width: 1440px
+			margin: 0 auto 		
+			>*:not(:last-child)
+				margin-bottom: 25px
+			> *,
+			label 
+				display: block 
+				width: 100%
+			label
+				text-align: center 
+				+rem('font-size', 40px)
+				+mq(1440px, max)
+					+rem('font-size', 22px)
+					+mq(814px, max)
+						+rem('font-size', 19px)
+				color: $darkblue
+				margin-bottom: 8px
+			input,
+			textarea
+				display: block 
+				width: 100%
+				border: 2px $darkblue solid 
+				+border(5px)
+				color: $darkblue 
+				+rem(('font-size':32px, 'line-height':100px))
+				height: 100px
+				+mq(1440px, max)
+					+rem(('font-size':22px, 'line-height':initial))
+					+mq(814px, max)
+						+rem('font-size', 19px)
+					height: initial				
+					padding: 15px
+				padding: 0 15px
+			.btn 
+				width: 100%
+			textarea 
+				height: 450px 
+				+mq(1440px, max)	
+					height: 150px
+				overflow: hidden
+				resize: none

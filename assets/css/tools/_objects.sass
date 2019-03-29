@@ -1,0 +1,258 @@
+textarea,
+input
+    &[placeholder]
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-moz-placeholder
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-webkit-input-placeholder
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &:-ms-input-placeholder 
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+
+.flex   
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex    
+
+.container
+    display: block
+    max-width: 1440px
+    margin: 0 auto
+    padding-left: 45px
+    padding-right: 45px
+    +mq(814px, max)
+        padding-left: 15px
+        padding-right: 15px
+
+#wrap
+    min-height: 100vh
+    overflow: hidden
+
+.logo 
+    a
+        display: inline-block
+        img,svg
+            display: block
+            height: auto
+            max-width: 100%
+
+.title
+    display: block 
+    font-family: 'Bebas Neue'
+    text-align: center 
+    color: $darkblue
+    +rem('font-size', 44px)
+    +mq(814px, max)
+        +rem('font-size', 32px)
+    margin: 0 auto
+.boxed
+    background-color: $lightblue
+    padding-top: 50px
+    padding-bottom: 50px
+    
+.btn 
+    display: inline-block 
+    vertical-align: middle 
+    padding: 20px 90px
+    +mq(568px, max)
+        padding: 15px 20px
+    +border(999px)
+    text-align: center
+    +rem('font-size', 42px)
+    +mq(1440px, max)
+        +rem('font-size', 22px)
+    text-transform: uppercase
+    font-family: 'Bebas Neue'
+    &.btn-1 
+        color: $darkblue 
+        background-color: $lightblue
+    &.btn-2 
+        color: white 
+        background-color: $darkblue 
+
+.parallax
+    display: block 
+    width: 100%
+    padding: 0 0 40%
+    +mq(814px, max)
+        padding: 0 0 50%
+        background-position: left center
+    background-size: cover 
+    background-position: center center
+    background-repeat: no-repeat
+    background-attachment: fixed        
+
+.text 
+    +rem(('font-size':16px, 'line-height':26px))
+    color: $gray
+    text-align: justify !important    
+
+.text-box
+    .container 
+        max-width: 100%
+        padding: 60px
+        +mq(814px, max)
+            padding: 60px 15px 15px
+        .titulo 
+            @extend .title
+        p 
+            @extend .text   
+            margin-top: 0 
+
+.avatar-wrapper
+    flex: 0 0 auto 
+    padding-top: 155px
+    padding-bottom: 135px   
+    +mq(900px, max)
+        margin: 0 auto            
+    .avatar 
+        width: 320px
+        height: 320px 
+        display: block 
+        +border(999px)
+        background-size: cover 
+        background-position: center  center
+        background-repeat: no-repeat    
+        margin: 0 auto 
+        z-index: 2
+    &::after
+        background: url(assets/imgs/paws-profile.png) center center / contain no-repeat
+        position: absolute
+        top: calc(50% - 250px)
+        left: calc(50% - 250px)
+        z-index: 1
+        display: block
+        height: 500px
+        width: 500px
+        content: ''
+    & + * 
+        padding-left: 130px     
+        +mq(900px, max)
+            padding-left: 0    
+
+.banner
+    @extend .flex
+    flex-flow: column wrap 
+    justify-content: center 
+    align-items: center    
+    background-size: cover 
+    background-position: left  center
+    background-repeat: no-repeat
+    height: 800px
+    .container 
+        @extend .flex
+        flex-flow: column wrap 
+        justify-content: center 
+        align-items: center        
+        height: 100%
+        width: 100%
+    +mq(1440px, max)
+        height: 400px
+        +mq(814px, max)
+            height: 300px
+    .titulo 
+        @extend .title 
+        +rem('font-size', 44px)
+        +mq(814px, max)
+            +rem('font-size', 30px)
+        color: white
+        z-index: 2                        
+
+.perfil-info
+    >*
+        display: flex
+        flex-flow: row wrap 
+        justify-content: flex-start 
+        align-items: flex-start 
+        &:not(:last-child)::before 
+            content: '●'
+            display: inline-block 
+            vertical-align: middle 
+            flex: 0 0 auto 
+            margin-right: 15px
+            line-height: 2
+            +mq(900px, max)
+                display: none
+        &.tipo_de_pelo
+            margin-top: 30px
+        &.peso 
+            margin-bottom: 30px
+        p
+            flex: 1
+            +rem(('font-size':16px,'line-height':32px))
+            +mq(900px, max)
+                text-align: center
+            strong 
+                font-weight: 700 
+
+.galeria 
+    @extend .flex 
+    flex-flow: row wrap 
+    justify-content: center 
+    align-items: stretch
+    margin-bottom: -10px
+    padding: 0 75px
+    +mq(814px, max)
+        padding: 0 30px
+    >* 
+        cursor: pointer
+        flex: 0 0 auto 
+        width: calc(25% - 10px)
+        +mq(737px, max)
+            width: calc(33.333% - 10px)
+            +mq(568px, max)
+                width: calc(50% - 10px)
+                +mq(414px, max)
+                    width: 100%
+                    margin: 0 5px 0
+        margin: 0 5px 10px
+        > * 
+            display: block
+            width: 100%
+            padding: 0 0 100%
+            background-size: cover 
+            background-position: center center
+            background-repeat: no-repeat
+
+.filiacao
+    @extend .flex
+    flex-flow: row wrap 
+    justify-content: center
+    +mq(814px, max)
+        justify-content: space-between
+    align-items: center 
+    padding: 0 75px
+    >*
+        &.filiacao-header
+            width: 100%
+            flex: 0 0 auto !important
+            margin-right: 0 !important
+            margin-bottom: 110px
+            +mq(814px, max)
+                margin-bottom: 30px
+        flex: 0 0 auto
+        +mq(814px, max) 
+            flex: 1
+        text-align: center 
+        img 
+            display: inline-block
+            max-width: 100%  
+            max-height: 150px    
+        &:not(:last-child)
+            margin-right: 75px            
+
+.hamburger
+    padding: 0 !important
