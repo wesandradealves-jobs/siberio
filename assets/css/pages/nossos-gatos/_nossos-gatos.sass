@@ -4,13 +4,14 @@
 			.container
 				padding-top: 0	
 				padding-bottom: 15px
+				max-width: 1440px
 .nossos-gatos
 	@extend .flex
 	flex-flow: row wrap 
 	justify-content: center
 	align-items: stretch
 	max-width: 1680px
-	margin: 0 auto 
+	margin: 60px auto
 	> li 
 		cursor: pointer
 		flex: 1
@@ -27,18 +28,21 @@
 				color: $darkblue
 		.avatar
 			+transition(500ms)
+		.avatar-wrapper
+			padding: 160px 0 20px
 		.title 
 			display: block 
 			> * 
 				display: inherit 
 			> span 
 				background-color: $darkblue
-				padding: 5px 40px
 				@extend .title 
 				color: white
-				+rem('font-size', 40px) 
-				max-width: 166px
+				+rem('font-size', 20px) 
 				margin-bottom: 10px
+				padding: 6px 0 3px
+				display: block
+				max-width: 120px				
 			> small 
 				@extend .title 
-				+rem('font-size', 16px)
+				+rem('font-size', 12px)

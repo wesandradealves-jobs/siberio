@@ -1,91 +1,137 @@
-.pg-contato
-	.contato
-		background-color: $darkblue
-		color: white 
-		.title 
-			color: white 
-			display: block
-			padding: 90px 0 30px
-			+rem('font-size', 22px)
-			letter-spacing: 2px
-		.container 
-			@extend .flex 
-			flex-flow: row wrap 
-			justify-content: center 
-			align-items: flex-start
-			padding-bottom: 90px
+// .pg-contato
+// 	.contato
+// 		background-color: $darkblue
+// 		color: white 
+// 		.title 
+// 			color: white 
+// 			display: block
+// 			padding: 90px 0 30px
+// 			+rem('font-size', 22px)
+// 			letter-spacing: 2px
+// 		.container 
+// 			@extend .flex 
+// 			flex-flow: row wrap 
+// 			justify-content: center 
+// 			align-items: flex-start
+// 			padding-bottom: 90px
+// 			text-align: center
+// 			> *:not(:last-child)
+// 				margin-right: 40px
+// 			p, .socialnetworks span 
+// 				color: white 
+// 				+rem('font-size', 55px)
+// 				+mq(1440px, max)
+// 					+rem('font-size', 19px)				
+// 				font-weight: 600
+// 			i 
+// 				color: $lightblue 
+// 				+rem(('font-size' : 75px, 'line-height' : 30px))
+// 				height: 30px
+// 				width: 30px
+// 				text-align: center
+// 				display: inline-block 
+// 				vertical-align: middle
+// 				&:hover 	
+// 					color: white
+// 				+mq(1440px, max)
+// 					+rem('font-size', 35px)
+// 			.socialnetworks > li 
+// 				display: inline-block 
+// 				vertical-align: middle
+// 				&:not(:first-child)
+// 					margin-left: 40px
+.contactform
+	// .container
+	// 	max-width: 1440px
+	// 	padding: 60px 145px
+	// 	+mq(814px, max)
+	// 		padding-left: 45px 
+	// 		padding-right: 45px
+	.logo 
+		margin-bottom: 100px
+		+mq(814px, max)
+			margin-left: auto 
+			margin-right: auto
 			text-align: center
-			> *:not(:last-child)
-				margin-right: 40px
-			p, .socialnetworks span 
-				color: white 
-				+rem('font-size', 55px)
-				+mq(1440px, max)
-					+rem('font-size', 19px)				
-				font-weight: 600
-			i 
-				color: $lightblue 
-				+rem(('font-size' : 75px, 'line-height' : 30px))
-				height: 30px
-				width: 30px
-				text-align: center
-				display: inline-block 
-				vertical-align: middle
-				&:hover 	
-					color: white
-				+mq(1440px, max)
-					+rem('font-size', 35px)
-			.socialnetworks > li 
-				display: inline-block 
-				vertical-align: middle
-				&:not(:first-child)
-					margin-left: 40px
-	.contactform
-		.container
-			max-width: 1440px
-			padding: 60px 145px
+		img 
+			max-height: 140px
+	.container 
+		@extend .flex 
+		flex-flow: row wrap 
+		+mq(814px, max)
+			flex-flow: column wrap
+		justify-content: space-between 
+		align-items: stretch
+		padding-top: 120px
+		padding-bottom: 120px
+		p 
+			color: $darkblue 
+			+rem('font-size', 22px)
+			margin-bottom: 25px
+			font-weight: bold
 			+mq(814px, max)
-				padding-left: 45px 
-				padding-right: 45px
-		form 
-			max-width: 1440px
-			margin: 0 auto 		
-			>*:not(:last-child)
-				margin-bottom: 25px
-			> *,
-			label 
-				display: block 
-				width: 100%
-			label
-				text-align: center 
-				+rem('font-size', 40px)
-				+mq(1440px, max)
-					+rem('font-size', 22px)
-					+mq(814px, max)
-						+rem('font-size', 19px)
+				text-align: center
+		> * 
+			flex: 1
+		.socialnetworks 
+			+mq(814px, max)
+				text-align: center
+			> *
 				color: $darkblue
-				margin-bottom: 8px
-			input,
-			textarea
-				display: block 
-				width: 100%
-				border: 1px $darkblue solid 
-				+border(5px)
-				color: $darkblue 
-				+rem(('font-size':32px, 'line-height':100px))
-				height: 100px
-				+mq(1440px, max)
-					+rem(('font-size':22px, 'line-height':initial))
-					+mq(814px, max)
-						+rem('font-size', 19px)
-					height: initial				
-					padding: 15px
-				padding: 0 15px
-			.btn 
-				width: 100%
-			textarea 
-				height: 450px 
-				+mq(1440px, max)	
-					height: 150px
-				overflow: hidden
-				resize: none
+				font-weight: bold
+				display: inline-block 
+				+rem('font-size', 40px)
+				vertical-align: middle
+				&:not(:last-child)
+					margin-right: 10px
+				
+	form 
+		// max-width: 1440px
+		// margin: 0 auto 		
+		@extend .flex 
+		flex-flow: row wrap 
+		justify-content: space-between
+		padding-right: 165px
+		+mq(1024px, max)
+			padding-right: 60px
+			+mq(814px, max)
+				padding-right: 0
+				padding-bottom: 60px
+		>* 
+			flex: 0 0 auto 
+			width: 100%
+			&:nth-child(1),
+			&:nth-child(3)
+				padding-right: 15px
+				+mq(814px, max)
+					padding-right: 0
+			&:not(:last-child):not(:nth-last-child(2))
+				width: 50%
+				+mq(814px, max)
+					width: 100%
+		>*:not(:last-child)
+			margin-bottom: 25px
+		> *,
+		label 
+			display: block 
+			width: 100%
+		label
+			+rem('font-size', 16px)
+			color: $darkblue
+			margin-bottom: 8px
+		input,
+		textarea
+			background-color: transparentize($darkblue, .95)
+			display: block 
+			width: 100%
+			color: $darkblue 
+			+rem(('font-size':14px))
+			padding: 10px 15px
+		.btn 
+			width: 100%
+			+rem('font-size', 19px)
+			padding: 10px 30px
+		textarea 
+			height: 160px 
+			overflow: hidden
+			resize: none

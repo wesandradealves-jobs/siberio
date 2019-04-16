@@ -1,5 +1,5 @@
 	</main>
-	<?php if(get_theme_mods('footer-titulo')||get_theme_mods('imagens-footer')): ?>
+	<?php if((get_theme_mods('footer-titulo')||get_theme_mods('imagens-footer')) && is_front_page() || $post->post_name == 'o-gatil'): ?>
 		<?php if($post->post_name != 'o-gatil') : ?>
 		<footer class="footer">
 			<?php if(get_theme_mods('footer-titulo') && is_front_page()) : ?>

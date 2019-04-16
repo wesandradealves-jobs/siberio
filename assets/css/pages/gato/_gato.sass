@@ -1,9 +1,11 @@
-.page-templates-gato
+.pg-archive,
+.pg-category
 	.main 
 		+mq(1280px, min)
 			background: url(assets/imgs/paws-horizontal.png) center bottom no-repeat transparent
-			padding-bottom: 630px
-			margin-bottom: -130px
+			padding-bottom: 160px
+			+mq(814px, max)
+				padding-bottom: 0
 	.banner
 		@extend .flex
 		flex-flow: column wrap 
@@ -13,16 +15,6 @@
 		& + .titulo
 			@extend .title
 			@extend .boxed
-		&::after 
-			content: ''
-			display: block 
-			position: absolute 
-			top: 0 
-			left: 0 
-			width: 100%
-			height: 100%
-			background-color: rgba(0,0,0,.75)
-			z-index: 1
 	.perfil
 		background-color: $darkblue
 		color: white
@@ -42,6 +34,17 @@
 
 	.descricao
 		background-color: $lightblue
+		.mobile
+			display: none
+			&.toggle 
+				display: block
+			background: white
+			padding: 30px
+			margin: 30px 0 -30px
+			color: $gray
+			p 
+				font-family: 'Arial'
+				+rem('font-size', 14px)			
 		.container 
 			max-width: 100%
 			padding-left: 0 
@@ -49,66 +52,42 @@
 			.tabs
 				@extend .flex 
 				flex-flow: row wrap 
+				+mq(1180px, max)
+					flex-flow: column wrap
+					top: 0 
+					margin-bottom: 0
+					padding-left: 0
+					padding-right: 0
 				justify-content: space-between
 				align-items: stretch
-				padding-left: 75px
-				padding-right: 75px
-				+mq(1500px, max)
-					padding-left: 30px
-					padding-right: 30px
-					+mq(1440px, max)
-						top: -50px
-						margin-bottom: -50px
-						+mq(737px, max)
-							justify-content: center 
-							top: 0
-							margin-bottom: 0
-							padding-top: 30px
-				top: -70px
-				margin-bottom: -70px
+				padding-left: 45px
+				padding-right: 45px
+				top: -55px
+				margin-bottom: -55px
 				&-content 
+					color: white
+					+mq(1180px, max)
+						display: none
 					>* 
 						margin: 0 auto 
 						padding: 60px 45px
-						+mq(814px, max)
-							padding: 10px 45px 25px					    
 						&:not(:first-child)
 							display: none
 						p 
 							@extend .text
+							color: inherit
 				> * 
 					flex: 1 
-					padding: 45px 0
-					+mq(1440px, max)
-						padding: 30px 0
-						+rem('font-size', 22px)
-						+mq(1280px, max)
-							+rem('font-size', 18px)
-							+mq(1024px, max)
-								overflow: hidden
-								text-overflow: ellipsis
-								white-space: nowrap
-								padding: 30px 15px
-								+mq(814px, max)
-									flex: 0 0 auto 
-									margin-bottom: 15px
-									+border(10px)
-									&:nth-last-child(4)
-										width: calc(100% - 16px)
-									&:nth-last-child(7),
-									&:nth-last-child(6),
-									&:nth-last-child(5),										
-									&:nth-last-child(3),
-									&:nth-last-child(2),
-									&:nth-last-child(1)
-										width: 30.333%
-									+mq(568px, max)
-										width: 100%!important
+					padding: 30px 0
 					text-align: center 
 					+rem('font-size', 26px)
+					+mq(1440px, max)
+						+rem('font-size', 19px)
 					font-family: 'Bebas Neue'
 					color: black
 					border: 1px $lightblue solid 
+					+mq(1180px, max)
+						margin: 0
 					background-color: white 
 					margin: 0 7.5px
 					+border(3px)
@@ -117,6 +96,4 @@
 					&.current,
 					&.active 
 						background-color: $lightblue 
-						+mq(737px, max)
-							background-color: darken($lightblue, 10%)
 						color: white

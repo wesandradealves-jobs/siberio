@@ -39,6 +39,16 @@ $(document).mouseup(function (e)
         closeMenu();
     }
 });  
+function sendWPP(e){   
+    var e = $(e);
+    var telefone = "5521999885520";
+    var saudacao = "Olá!";
+    // var name = document.getElementById("user_nome").value;
+    // var msg = document.getElementById("user_msg").value;        
+    var saudacaoencode = encodeURI(saudacao);       
+    var url_base = "https://api.whatsapp.com/send?phone=" + telefone + "&text=" + saudacaoencode + "%20";
+    e.attr("href", url_base);    
+}
 $(document).ready(function () {
     $('.telefone').mask('(00) 00000-0000');
     $('.webdoor').slick({
@@ -54,18 +64,26 @@ $(document).ready(function () {
             $(this).closest('.tabs').find('.active').not($(this)).removeClass('active'),
             $(this).addClass('active');
 
-            $(this).closest('.tabs').next().children().first().removeClass('active'),
-            $(this).closest('.tabs').next().find('.active').not().eq($(this).index()).removeClass('active'),
-            $(this).closest('.tabs').next().children().eq($(this).index()).addClass('active'),
-            $(this).closest('.tabs').next().children().hide(),
-            $(this).closest('.tabs').next().children().eq($(this).index()).show();
-        });        
+            if ($(window).width() > 1180) {
+                $(this).closest('.tabs').next().children().first().removeClass('active'),
+                $(this).closest('.tabs').next().find('.active').not().eq($(this).index()).removeClass('active'),
+                $(this).closest('.tabs').next().children().eq($(this).index()).addClass('active'),
+                $(this).closest('.tabs').next().children().hide(),
+                $(this).closest('.tabs').next().children().eq($(this).index()).show();                
+            } else {
+                $(this).closest('.tabs').find('.mobile').removeClass('toggle'),
+                $(this).children('.mobile').addClass('toggle')
+            } 
+        });  
+        if ($(window).width() <= 1180) {
+            $('.tabs').children().first().find('.mobile').addClass('toggle')       
+        }                
     }
     $(window).scroll(function(event){
         var st = $(this).scrollTop();
 
         $( '.pg-home main section' ).each(function() {
-            if($(this).offset().top > (st + $('header').outerHeight())){
+            if($(this).offset().top > (st + $('header').outerHeight() + 80)){
                 $(this).removeClass('animated');
             } else {
                 $(this).addClass('animated');

@@ -1,16 +1,21 @@
 .pg-interna
 	&.pg-o-gatil
+		.title 
+			&.boxed 
+				background-color: $darkblue
 		.main 
 			+mq(1260px, min)
-				background: url(assets/imgs/paws-horizontal.png) center bottom no-repeat transparent
-				padding-bottom: 0
+				background: url(assets/imgs/paws-horizontal.png) center 117% no-repeat transparent
+				padding-bottom: 250px
+				+mq(814px, max)
+					padding-bottom: 0
 		.filiacao
 			margin-bottom: 30px		
 		.text-box
 			background-color: $lightblue
+			color: white
+			p 
+				color: inherit !important
 		.galeria 
-			padding-top: 130px
-			padding-bottom: 130px
-			+mq(814px, max)
-				padding-top: 60px
-				padding-bottom: 60px
+			padding-top: 60px
+			padding-bottom: 60px

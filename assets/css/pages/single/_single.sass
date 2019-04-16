@@ -1,68 +1,106 @@
 .pg-single
+	&.post-eros
+		.premios 
+			background-color: $blue 
+			color: white
+			.title 
+				color: inherit
 	.footer 
 		.filiacao
 			margin-top: 30px
 	.main 
-		+mq(1280px, min)
-			background: url(assets/imgs/paws-horizontal.png) center bottom no-repeat transparent
-			padding-bottom: 760px	
+		+mq(1260px, min)
+			background: url(assets/imgs/paws-horizontal.png) center 117% no-repeat transparent
+			padding-bottom: 250px
+			+mq(814px, max)
+				padding-bottom: 0		
 	.banner 
 		height: 0 !important 
 		padding: 0 0 45% !important	
+		background-position: center center
 	.single-perfil
-		max-width: 540px
-		margin: -50px auto 0
+		margin: 0 auto
 		.container
 			padding: 0
 			h4 
 				font-style: italic 
 				+rem('font-size', 22px)
 				color: $gray
-				margin-top: 30px
 				text-align: center 
 				font-weight: bold
-		.title
-			&.perfil-header
-				margin-bottom: 20px
-				.title 
+				word-break: break-word
+				max-width: 290px
+				margin: 90px auto 60px
+		.perfil-header
+			background-repeat: repeat-x
+			background-size: 75px
+			text-align: center
+			> span 
+				background-color: white
+				display: inline-block 
+				padding: 15px 75px 0
+				+mq(814px, max)
+					padding: 15px 30px 0
+				text-align: center
+				> span 
+					display: block 
+					line-height: 1
+					width: 100%
+					&:last-child
+						margin-top: -15px
+						+mq(814px, max)
+							margin-top: 0
 					small 
-						display: block
-						+rem('font-size', 29px)
-						text-align: center
-				background-color: $lightblue
-				display: flex
-				flex-flow: row wrap 
-				align-items: stretch 
-				justify-content: space-between	
-				+rem('font-size', 98px !important)
-				+mq(1024px, max)
-					+rem('font-size', 62px !important)
-					+mq(414px, max)
-						+rem('font-size', 42px !important)
-				>span 
-					flex: 1
-					+mq(1024px, max)
-						&:not(.flag)
-							padding: 20px 0
-							+mq(414px, max)
-								padding: 34px 0
-					&.flag 
-						flex: 0 0 auto
-						width: 175px
-						background-size: contain
-						background-position: center top
-						background-repeat: no-repeat
+						+rem('font-size', 24px)
+		.title
+			// small 
+			// 	display: block
+			// 	+rem('font-size', 29px)
+			// 	text-align: center		
+			// &.perfil-header
+			// 	margin-bottom: 20px
+			// 	background-color: $lightblue
+			// 	display: flex
+			// 	flex-flow: row wrap 
+			// 	align-items: stretch 
+			// 	justify-content: space-between	
+			// 	+rem('font-size', 98px !important)
+			// 	+mq(1024px, max)
+			// 		+rem('font-size', 62px !important)
+			// 		+mq(414px, max)
+			// 			+rem('font-size', 42px !important)
+			// 	>span 
+			// 		flex: 1
+			// 		+mq(1024px, max)
+			// 			&:not(.flag)
+			// 				padding: 20px 0
+			// 				+mq(414px, max)
+			// 					padding: 34px 0
+			// 		&.flag 
+			// 			flex: 0 0 auto
+			// 			width: 175px
+			// 			background-size: contain
+			// 			background-position: center top
+			// 			background-repeat: no-repeat
 	.perfil-info
-		margin-top: 60px
 		+mq(568px, max)
 			padding: 0 30px
 		display: block
+		max-width: 85%
+		margin: 0 auto
 		>*
+			color: black
 			&::before 
-				display: none
-			&:not(:last-child)
-				margin-bottom: 10px
-	.premios
+	            content: '●'
+	            display: inline-block 
+	            vertical-align: middle 
+	            flex: 0 0 auto 
+	            margin-right: 15px
+	            line-height: 2
+	            +mq(900px, max)
+	                display: none
+	
+	section.premios
 		background-color: $lightblue 
 		margin-top: calc(105px + 110px)
 		padding-left: 75px
@@ -81,14 +119,15 @@
 				margin: 0 auto
 				top: -100px
 			& + .title 
-				padding: 70px auto 140px
+				+rem('font-size', 50px)
+				+mq(814px, max)
+					+rem('font-size', 40px)
+				max-width: 737px
 				small
 					display: block 
-					margin-top: 60px
-					+rem('font-size', 32px)
-					+mq(814px, max)
-						+rem('font-size', 24px)
-	.galeria 
+					margin-top: 30px
+					+rem('font-size', 26px)
+	section.galeria 
 		margin-top: -135px
 		&:hover > * 
 			filter: blur(5px)

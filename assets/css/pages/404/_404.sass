@@ -1,0 +1,23 @@
+.pg-404
+	.main 
+		>section
+			min-height: 100vh
+			>.container
+				height: 100%
+				@extend .flex
+				flex-flow: column 
+				justify-content: center 
+				align-items: center
+				padding-bottom: 120px
+				.title
+					+rem('font-size', 90px)
+					font-family: 'Amarillo'
+					margin-bottom: 0
+					line-height: .5
+					margin-top: 50px
+					margin-bottom: -20px
+					& + *
+						@extend .title
+						font-family: 'Bebas Neue'
+						line-height: 1.5
+						+rem('font-size', 32px)

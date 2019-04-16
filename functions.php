@@ -29,8 +29,9 @@
     function cpt() {
         $post_types = array(
             array(
-                'title' => 'Gatos',
-                'slug' => 'gatos'
+                'title' => 'Nossos Gatos',
+                'slug' => 'nossos-gatos',
+                'taxonomy' => true
             )           
         );
         foreach ($post_types as $key => $value) {
@@ -38,17 +39,17 @@
                 register_taxonomy( $value['slug'].'_categories', array( $value['slug'] ), array(
                     'hierarchical'      => true, // Set this to 'false' for non-hierarchical taxonomy (like tags)
                     'labels'            => array(
-                        'name'              => _x( 'Categorias', 'taxonomy general name' ),
-                        'singular_name'     => _x( 'Categoria', 'taxonomy singular name' ),
-                        'search_items'      => __( 'Buscar Categorias' ),
-                        'all_items'         => __( 'Todas as Categorias' ),
-                        'parent_item'       => __( 'Categoria Pai' ),
-                        'parent_item_colon' => __( 'Categoria Pai:' ),
-                        'edit_item'         => __( 'Editar categoria' ),
-                        'update_item'       => __( 'Atualizar categoria' ),
-                        'add_new_item'      => __( 'Adicionar nova categoria' ),
+                        'name'              => _x( 'Raças', 'taxonomy general name' ),
+                        'singular_name'     => _x( 'Raça', 'taxonomy singular name' ),
+                        'search_items'      => __( 'Buscar Raças' ),
+                        'all_items'         => __( 'Todas as Raças' ),
+                        'parent_item'       => __( 'Raça Pai' ),
+                        'parent_item_colon' => __( 'Raça Pai:' ),
+                        'edit_item'         => __( 'Editar Raça' ),
+                        'update_item'       => __( 'Atualizar Raça' ),
+                        'add_new_item'      => __( 'Adicionar nova Raça' ),
                         'new_item_name'     => __( 'Novo nome' ),
-                        'menu_name'         => __( 'Categorias' ),
+                        'menu_name'         => __( 'Raças' ),
                     ),
                     'show_ui'           => true,
                     'show_admin_column' => true,
@@ -160,7 +161,7 @@
 
         //remove_menu_page( 'themes.php' );                 //Appearance
 
-        remove_menu_page( 'plugins.php' );                //Plugins
+        // remove_menu_page( 'plugins.php' );                //Plugins
 
         // remove_menu_page( 'users.php' );                  //Users
 
@@ -218,7 +219,7 @@
 
     
 
-    add_filter('acf/settings/show_admin', '__return_false');
+    // add_filter('acf/settings/show_admin', '__return_false');
 
     
 
@@ -551,19 +552,19 @@
 
             ));                 
 
-            $wp_customize->add_setting('imagens-footer');
+            // $wp_customize->add_setting('imagens-footer');
 
-            $wp_customize->add_control('imagens-footer',  array(
+            // $wp_customize->add_control('imagens-footer',  array(
 
-                'label' => 'Imagens Rodapé (Separar links por vírgula.)',
+            //     'label' => 'Imagens Rodapé (Separar links por vírgula.)',
 
-                'section' => 'footer',
+            //     'section' => 'footer',
 
-                'type' => 'textarea',
+            //     'type' => 'textarea',
 
-                'settings' => 'imagens-footer'
+            //     'settings' => 'imagens-footer'
 
-            ));                     
+            // ));                     
 
             $wp_customize->add_section( 'header' , array(
 

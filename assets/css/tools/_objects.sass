@@ -60,20 +60,16 @@ input
     margin: 0 auto
 .boxed
     background-color: $lightblue
-    padding-top: 50px
-    padding-bottom: 50px
+    color: white
+    padding: 25px 15px
     
 .btn 
     display: inline-block 
     vertical-align: middle 
     padding: 20px 90px
-    +mq(568px, max)
-        padding: 15px 20px
     +border(999px)
     text-align: center
     +rem('font-size', 42px)
-    +mq(1440px, max)
-        +rem('font-size', 22px)
     text-transform: uppercase
     font-family: 'Bebas Neue'
     &.btn-1 
@@ -98,14 +94,15 @@ input
 .text 
     +rem(('font-size':16px, 'line-height':26px))
     color: $gray
-    text-align: justify !important    
+    text-align: center !important    
 
 .text-box
     .container 
-        max-width: 100%
+        max-width: calc(1024px - 60px)
         padding: 60px
         +mq(814px, max)
             padding: 60px 15px 15px
+            max-width: calc(1024px - 15px)
         .titulo 
             @extend .title
         p 
@@ -149,9 +146,11 @@ input
     justify-content: center 
     align-items: center    
     background-size: cover 
-    background-position: left  center
+    background-position: center top
     background-repeat: no-repeat
-    height: 800px
+    min-height: 700px
+    +mq(814px, max)
+        min-height: 300px 
     .container 
         @extend .flex
         flex-flow: column wrap 
@@ -159,10 +158,6 @@ input
         align-items: center        
         height: 100%
         width: 100%
-    +mq(1440px, max)
-        height: 400px
-        +mq(814px, max)
-            height: 300px
     .titulo 
         @extend .title 
         +rem('font-size', 44px)
@@ -187,9 +182,7 @@ input
             +mq(900px, max)
                 display: none
         &.tipo_de_pelo
-            margin-top: 30px
-        &.peso 
-            margin-bottom: 30px
+            margin: 30px 0
         p
             flex: 1
             +rem(('font-size':16px,'line-height':32px))
@@ -203,7 +196,7 @@ input
     flex-flow: row wrap 
     justify-content: center 
     align-items: stretch
-    margin-bottom: -10px
+    margin-bottom: 30px
     padding: 0 75px
     +mq(814px, max)
         padding: 0 30px
@@ -254,3 +247,7 @@ input
 
 .hamburger
     padding: 0 !important
+
+p
+    b,strong 
+        font-weight: 700
